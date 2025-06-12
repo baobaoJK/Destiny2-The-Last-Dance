@@ -1,0 +1,223 @@
+#decklist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 4rem);
+    background-color: #12171c;
+    padding-top: 4rem;
+    overflow: auto;
+  
+    // 卡牌列表
+    .decks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 80%;
+      min-height: 80%;
+      color: white;
+  
+      // 卡牌头部
+      .deck-top {
+        width: 100%;
+        height: 3.125rem;
+        margin-bottom: 2rem;
+  
+        // 卡牌名称
+        .deck-title {
+          width: 10%;
+          height: auto;
+          float: left;
+          font-size: 2rem;
+          font-weight: 100;
+          letter-spacing: 0.125rem;
+        }
+  
+        hr {
+          overflow: auto;
+        }
+  
+        // 卡牌操作
+        .deck-options {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          width: 90%;
+          height: auto;
+          float: left;
+        }
+  
+        // 卡牌分割线
+        .deck-line {
+          width: 100%;
+          border: none;
+          border-top: 1px solid #454955;
+        }
+      }
+  
+      // 卡牌列表
+      .card-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        height: auto;
+  
+        .card-list-header {
+          width: 100%;
+  
+          h2 {
+            font-size: 1.5rem;
+            font-weight: 100;
+          }
+  
+          .deck-line {
+            border: 1px solid white;
+          }
+        }
+  
+        .card-item {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          width: 15rem;
+          height: 30rem;
+          margin: 1rem;
+  
+          .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 25.625rem;
+            margin-bottom: 0.5rem;
+            background-position: center;
+            background-size: cover;
+            border-radius: 1rem;
+          }
+  
+          .card-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 85%;
+            height: 90%;
+            background-color: #0008;
+            text-align: center;
+            border-radius: 1rem;
+          }
+  
+          .card-name {
+            text-align: center;
+            font-size: 1.5rem;
+          }
+  
+          .card-text {
+            font-size: 1rem;
+          }
+  
+          .delete-button {
+            background-color: #af2222;
+            border: 1px solid #a75555;
+          }
+          
+          .use-button {
+            margin-top: 1rem;
+            background-color: #22af48;
+            border: 1px solid #59af70;
+          }
+        }
+      }
+    }
+  
+    .card-dialog,
+    .shuffle-dialog,
+    .random-dialog {
+      .title {
+        color: white;
+        font-weight: 100;
+        font-size: 2.5rem;
+        letter-spacing: 0.5rem;
+      }
+  
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2rem 0;
+  
+        .item {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 8.125rem;
+          height: 13.75rem;
+          margin: 2rem;
+          transition: opacity 0.3s;
+          cursor: pointer;
+  
+          &:hover {
+            opacity: 0.6;
+          }
+  
+          .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 8.125rem;
+            height: 13.75rem;
+            background-size: cover;
+            border-radius: 0.5rem;
+            transition: opacity 0.3s;
+  
+            .info {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-around;
+              width: 85%;
+              height: 90%;
+              font-size: 1rem;
+              color: white;
+              text-align: center;
+              background-color: #0005;
+              border-radius: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+  
+    .random-dialog {
+      .random-list-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+  
+        .random-flex {
+          display: flex;
+          height: 100%;
+        }
+  
+        .random-left,
+        .random-right {
+          padding-top: 8.875rem;
+        }
+  
+        .random-center {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: auto auto;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,261 @@
+#shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 4rem);
+    padding-top: 4rem;
+    overflow-y: auto;
+  
+    // 商店列表
+    .shop-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 80%;
+      height: 30rem;
+      color: white;
+  
+      // 商店头部
+      .shop-top {
+        width: 100%;
+        height: 3.125rem;
+  
+        // 商店名称
+        .shop-title {
+          width: 30%;
+          height: auto;
+          float: left;
+          font-size: 2rem;
+          font-weight: 100;
+          letter-spacing: 0.125rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        // 商店操作
+        .shop-options {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          width: 70%;
+          height: auto;
+          float: left;
+  
+          // 刷新文本
+          #pay-count,
+          #refresh-count {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+          }
+        }
+  
+        // 商店分割线
+        .shop-line {
+          width: 100%;
+          border: none;
+          border-top: 1px solid #454955;
+          overflow: auto;
+        }
+      }
+  
+      // 商店中部
+      .shop-main {
+        display: flex;
+        width: 95%;
+        height: auto;
+  
+        .shop-sell-list {
+          width: calc(100% - 22rem) !important;
+  
+          // 随机物品列表
+          .item-list,
+          .weapon-list,
+          .exotic-list {
+            width: 100%;
+            height: 10rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+  
+            // 商店名称
+            .shop-title {
+              font-size: 1.5rem;
+              font-weight: 100;
+              letter-spacing: 0.125rem;
+              padding-left: 0.5rem;
+            }
+  
+            // 商店分割线
+            .shop-line {
+              width: 100%;
+              border: none;
+              border-top: 1px solid white;
+            }
+  
+            .item-list {
+              display: flex;
+  
+              .item {
+                width: 6rem;
+                height: 6rem;
+                margin-top: 0.25rem;
+                margin-right: 0.5rem;
+                border: 2px solid #b0b4b0;
+                box-sizing: border-box;
+                transition: opacity 0.5s;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+  
+                &:hover {
+                  opacity: 0.5;
+                }
+              }
+  
+              .tips {
+                width: 100%;
+                text-align: center;
+                letter-spacing: 1rem;
+                color: #888888;
+              }
+            }
+          }
+        }
+  
+        // 背包列表
+        .backpack {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          width: 22rem;
+          margin-top: 1rem;
+          border-left: 1px solid white;
+  
+          // 背包名称
+          .backpack-title {
+            width: 100%;
+            height: auto;
+            float: left;
+            font-size: 1.5rem;
+            font-weight: 100;
+            letter-spacing: 0.125rem;
+            padding-left: 2rem;
+          }
+  
+          // 商店分割线
+          .backpack-line {
+            width: 100%;
+            border: none;
+            border-top: 1px solid white;
+          }
+  
+          // 物品列表
+          .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+  
+            h1 {
+              width: 100%;
+              font-size: 1.5rem;
+              letter-spacing: 1rem;
+              text-align: center;
+              margin-top: 1rem;
+              color: #d4d4d4;
+            }
+  
+            .item {
+              width: 6rem;
+              height: 6rem;
+              margin: 0.25rem;
+              border: 2px solid #b0b4b0;
+              box-sizing: border-box;
+              transition: opacity 0.5s;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+  
+              cursor: pointer;
+  
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    // 圣水模态框
+    .card-dialog {
+      .title {
+        color: white;
+        font-weight: 100;
+        font-size: 2.5rem;
+      }
+  
+      .card-list-box {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+  
+        .card-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 8.125rem;
+          height: 13.75rem;
+          margin: 1rem 2rem;
+          transition: opacity 0.3s;
+          cursor: pointer;
+  
+          &:hover {
+            opacity: 0.8;
+          }
+  
+          .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 8.125rem;
+            height: 13.75rem;
+            background-size: cover;
+            border-radius: 1rem;
+            transition: opacity 0.3s;
+  
+            .card-info {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 85%;
+              height: 90%;
+              font-size: 1.25rem;
+              color: white;
+              text-align: center;
+              background-color: #0005;
+              border-radius: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+  
+    // 商店关闭模态框
+    .shop-closed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0008;
+    }
+  }
+  

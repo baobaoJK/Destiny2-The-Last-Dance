@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "socket.io-client", "vue"]
+  }
+}

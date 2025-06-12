@@ -1,0 +1,67 @@
+// 地图面板样式
+#map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.25rem;
+  
+    // 地图标题
+    .map-title {
+      width: 100%;
+      margin: 2rem 0;
+      text-align: center;
+      color: white;
+    }
+  
+    // 地图列表
+    .map-roll-list {
+      position: relative;
+      width: 55rem;
+      height: 30.9375rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+  
+      .map-list {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+  
+        .map-img {
+          position: relative;
+          width: 55rem;
+          height: 30.9375rem;
+          margin-right: 2rem;
+  
+          clip-path: polygon(
+            8rem 0%,
+            100% 0%,
+            100% calc(100% - 8rem),
+            calc(100% - 8rem) 100%,
+            0 100%,
+            0% 8rem
+          );
+  
+          img {
+            position: relative;
+            width: 55rem;
+            height: 30.9375rem;
+            box-sizing: border-box;
+            border: 0.025rem solid rgb(73, 73, 73);
+            background-size: cover;
+          }
+        }
+      }
+    }
+  
+    // 地图文本
+    .map-text {
+      height: 4rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+  }
+  

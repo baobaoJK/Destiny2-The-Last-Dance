@@ -1,0 +1,187 @@
+@use './variables' as *;
+
+@keyframes toR {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -5000000% 0;
+  }
+}
+
+@keyframes toL {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 5000000% 0;
+  }
+}
+
+#room {
+  .options {
+    .el-input__wrapper {
+      padding: 0.5rem 1rem !important;
+    }
+  }
+}
+
+// 提示框样式
+.el-dialog {
+  position: relative;
+  padding: 2rem !important;
+  background: $backgroundColor !important;
+  clip-path: polygon(
+    5rem 0%,
+    100% 0%,
+    100% calc(100% - 5rem),
+    calc(100% - 5rem) 100%,
+    0 100%,
+    0% 5rem
+  );
+
+  // border-top: 10.25rem solid $backgroundColor;
+  // border-bottom: 10.25rem solid $backgroundColor;
+  // border-image: linear-gradient(45deg, #ff3434, #4aff4a, #11a8ff, #ff2dab, #4fffff, #f6d82c, #ea3030) 1;
+  // border-image: linear-gradient(45deg, #4aff4a, #11a8ff, #ff2d57, #4fffff, #4aff4a) 1;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    background: linear-gradient(45deg, #4aff4a, #11a8ff, #ff2d57, #4fffff, #fa7b20, #4affa1);
+    background-size: 200%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    animation: toR 86400s linear infinite;
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    background: linear-gradient(45deg, #4aff4a, #11a8ff, #ff2d57, #4fffff, #fa7b20, #4affa1);
+    background-size: 200%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    animation: toL 86400s linear infinite;
+  }
+
+  .el-dialog__header {
+    display: none;
+  }
+
+  .el-dialog__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+// 选项框样式
+.el-radio__label {
+  color: white;
+  font-size: 1rem !important;
+}
+
+// tabs
+.el-tabs__nav-scroll {
+  display: flex;
+  justify-content: center;
+}
+.el-tabs__item {
+  color: #fff !important;
+  transition: opacity 0.3s;
+
+  &.is-active {
+    color: #409eff !important;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.info-block {
+  $clipSize: 3rem;
+  clip-path: polygon(
+    $clipSize 0%,
+    100% 0%,
+    100% calc(100% - $clipSize),
+    calc(100% - $clipSize) 100%,
+    0 100%,
+    0% $clipSize
+  );
+
+  &.active-block {
+    // background: rgb(255, 255, 255, 0) !important;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      background: linear-gradient(45deg, #4aff4a, #11a8ff, #ff2d57, #4fffff, #fa7b20, #4affa1);
+      background-size: 200%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0.25rem;
+      animation: toR 86400s linear infinite;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      background: linear-gradient(45deg, #4aff4a, #11a8ff, #ff2d57, #4fffff, #fa7b20, #4affa1);
+      background-size: 200%;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.25rem;
+      animation: toL 86400s linear infinite;
+    }
+
+    .titan {
+      background-color: #680406 !important;
+    }
+
+    .hunter {
+      background-color: #23282b !important;
+    }
+
+    .warlock {
+      background-color: #2b2b29 !important;
+    }
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-image: url('/images/maps/raid/请选择地图.jpg');
+    // background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .titan {
+    background-image: url('/images/emblem/role/titan.jpg');
+  }
+
+  .hunter {
+    background-image: url('/images/emblem/role/hunter.jpg');
+  }
+
+  .warlock {
+    background-image: url('/images/emblem/role/warlock.jpg');
+  }
+}

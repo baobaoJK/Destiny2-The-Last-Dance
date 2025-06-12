@@ -1,0 +1,255 @@
+// 背景动画
+@keyframes start-bg {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// 角色标签动画
+@keyframes start-role {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+// 底部动画
+@keyframes start-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+// 角色图片动画
+@keyframes role-img {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+// 主页
+#home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background-b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+
+  animation: start-bg 2s forwards;
+
+  // 角色盒子样式
+  .role-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100rem;
+
+    .role-img-box {
+      width: 20rem;
+      min-height: 38rem;
+      margin-left: 10rem;
+
+      .role-img {
+        display: none;
+
+        &.show {
+          display: block;
+          animation: role-img 0.5s ease-in-out;
+        }
+      }
+    }
+
+    // 名片样式
+    .emblems {
+      width: 29.625rem;
+      // height: 31.25rem;
+
+      animation: start-role 3s forwards;
+
+      // 标题样式
+      .title {
+        width: 29.625rem;
+        height: 2rem;
+        margin-bottom: 2rem;
+        color: white;
+        font-size: 1.75rem;
+        text-align: center;
+      }
+
+      // 名片样式
+      .role {
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-size: cover;
+
+        .description {
+          width: calc(100% - 6rem);
+          height: calc(100% - 0.5rem);
+          margin-left: 6rem;
+          padding-top: 0.5rem;
+
+          p {
+            margin: 0;
+          }
+
+          .name {
+            font-size: 1.5rem;
+          }
+
+          .sub {
+            font-size: 1rem;
+            opacity: 0.5;
+          }
+        }
+
+        .light {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          width: 5rem;
+          height: 2rem;
+          font-size: 1.875rem;
+          font-weight: 400;
+          color: #e5d163;
+        }
+      }
+
+      .titan {
+        background-image: url('/images/emblem/role/titan.jpg');
+      }
+
+      .hunter {
+        background-image: url('/images/emblem/role/hunter.jpg');
+      }
+
+      .warlock {
+        background-image: url('/images/emblem/role/warlock.jpg');
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .link {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 2rem;
+
+          a {
+            display: block;
+            float: left;
+            width: 25%;
+            color: white;
+            font-size: 1.25rem;
+            text-align: center;
+            transition: opacity 0.3s;
+
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+
+          .langActive {
+            color: #e5d163;
+          }
+        }
+      }
+    }
+  }
+
+  // 模态框
+  .role-dialog {
+    clip-path: polygon(
+      5rem 0%,
+      100% 0%,
+      100% calc(100% - 5rem),
+      calc(100% - 5rem) 100%,
+      0 100%,
+      0% 5rem
+    );
+
+    .title {
+      font-weight: 100;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .role-confirm-box {
+      margin-top: 1rem;
+
+      button {
+        margin: 0 2rem;
+      }
+    }
+  }
+
+  // 页脚
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: #f0f0f0;
+
+    animation: start-bottom 3s forwards;
+
+    p {
+      color: black;
+    }
+  }
+}
